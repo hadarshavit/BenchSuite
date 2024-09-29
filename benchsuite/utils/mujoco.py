@@ -139,6 +139,7 @@ class MujucoPolicyFunc:
                 steps = 0
                 while not done:
                     count += 1                   
+                    print(m.shape, obs.shape, self._mean.shape, self._std.shape)
                     action = np.dot(m, (obs - self._mean) / self._std)
                     observations.append(obs)
                     actions.append(action)
